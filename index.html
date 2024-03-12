@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="welcome.html">
+    <title>Login Form</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <br>
+        <button type="submit">login In</button>
+        <a href="register.html"> New Registration</a>
+        
+    </form>
+    <p id="message"></p>
+
+    <script>
+        const form = document.getElementById('login-form');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Replace with your actual authentication logic
+            if (username === 'Rahul' && password === '0000') {
+                window.location.href = "welcome.html"; // Redirect to welcome page
+            } else {
+                message.textContent = 'Incorrect username or password.';
+                message.style.color = 'red';
+            }
+           
+        });
+    </script>
+</body>
+</html>
